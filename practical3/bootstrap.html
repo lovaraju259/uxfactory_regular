@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>my first bootstrap page</h1>
+            <p>resize the page</p>
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="#"><img
+                    src="data:image/png;base64,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"
+                    alt="" class="w-25"></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                </ul>
+        </nav>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="https://m.media-amazon.com/images/I/51AyoebP3BL._SX3000_.jpg"
+                    alt="first slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://m.media-amazon.com/images/I/71GTpbKWLVL._SX3000_.jpg"
+                    alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://m.media-amazon.com/images/I/61rADz+kcYL._SX3000_.jpg"
+                    alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card bg-success text-white">
+                    <img class="rounded-circle"
+                        src="https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
+                        alt="image">
+                    <div class="card-body">
+                        <h1 class="card-title m-3"> raju</h1>
+                        <p class="card-text">lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et,
+                            dignissimos
+                            sunt vel asperiores, facere unde minima animi veniam, modi iusto eaque autem debitis
+                            error
+                            minus ab
+                            repellat</p>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See
+                            Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container font-italic col-sm-8">
+                <h2>CONTAINER lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                </h2>
+                <img class="d-block w-100" src="https://m.media-amazon.com/images/I/51AyoebP3BL._SX3000_.jpg"
+                    alt="first slide">
+                    <div class="container font-italic">
+                        <h2>CONTAINER lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        </h2>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container font-italic border border-primary rounded">
+        <h2>CONTAINER lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </h2>
+    </div>
+    <div class="container p-3 m-3 bg-dark text-white border border-warning">
+        <h2>CONTAINER lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </h2>
+    </div>
+    <div class="container p-3 m-3 bg-primary text-white border border-danger">
+        <h2>CONTAINER lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </h2>
+    </div>
+    <div class="container-fluid">
+        CONTAINER-FLUIDlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+    </div>
+    <div class="container-sm">
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+    </div>
+    <div class="container-md">
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+    </div>
+    <div class="container-lg">
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+    </div>
+    <div class="container-xl">
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h1>coloum1</h1>
+                <p>lorem ipusm</p>
+                <p>quis nostrud exercitation </p>
+            </div>
+            <div class="col-4">
+                <h1>coloum1</h1>
+                <p>lorem ipusm</p>
+                <p>quis nostrud exercitation </p>
+            </div>
+            <div class="col-4">
+                <h1>coloum1</h1>
+                <p>lorem ipusm</p>
+                <p>quis nostrud exercitation </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="table-primary">
+                    <th>first name</th>
+                    <th>roll number</th>
+                    <th>contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success">
+                    <td>raju</td>
+                    <td>259</td>
+                    <td>1235789</td>
+                </tr>
+                <tr class="table-warning">
+                    <td>sri</td>
+                    <td>257</td>
+                    <td>888585789</td>
+                </tr>
+                <tr class="table-danger">
+                    <td>ask</td>
+                    <td>255</td>
+                    <td>888599789</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container p-4 m-2">
+        <div class="row">
+            <div class="col-6 col-md-6 col-lg-4 col-xl-3 border fw-bolder text-center text-uppercase text-primary">
+                col1
+            </div>
+            <div class="col-6 col-md-6 col-lg-4 col-xl-3 border text-success">col2</div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 border text-warning">col3</div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 border text-danger">col4</div>
+        </div>
+    </div>
+    <div class="container">
+        <h1><span class="badge bg-warning">badge</span></h1>
+        <span class="badge bg-info">new</span>
+        <h1>heading<span class="badge bg-secondary">new</span></h1>
+        <button type="button" class="btn btn-warning">button</button>
+        <div class="progress mt-3">
+            <div class="progress-bar bg-sucess" style="width: 80%;">80% completed</div>
+        </div>
+        <div class="dropdown mt-4">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">dropdown</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">link1</a>
+                <a class="dropdown-item" href="#">link2</a>
+                <a class="dropdown-item" href="#">link3</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">link4</a>
+            </div>
+        </div>
+        <div id="accordian">
+            <div class="card">
+                <button type="button" class="btn btn-outline-primary w-100" data-toggle="collapse"
+                    data-target="#demo1">dropdown</button>
+                <div id="demo1" class="collapse" data-parent="#accordian">lorem ipsum lorem ipsum lorem
+                    ipsumlorem ipsum
+                    lorem ipsum lorem ipsum
+                    lorem
+                    ipsum lorem ipsumlorem ipsum lorem ipsum ipsum lorem ipsumlorem ipsum lorem ipsum
+                    ipsum lorem ipsumlorem ipsum lorem ipsum ipsum lorem ipsumlorem ipsum </div>
+                <button type="button" class="btn btn-warning w-100" data-toggle="collapse"
+                    data-target="#demo2">dropdown</button>
+                <div id="demo2" class="collapse" data-parent="#accordian">lorem ipsum lorem ipsum lorem
+                    ipsumlorem ipsum
+                    lorem ipsum lorem ipsum
+                    lorem
+                    ipsum lorem ipsumlorem ipsum lorem ipsum ipsum lorem ipsumlorem ipsum lorem ipsum
+                    ipsum lorem ipsumlorem ipsum lorem ipsum ipsum lorem ipsumlorem ipsum</div>
+                <button type="button" class="btn btn-success w-100" data-toggle="collapse"
+                    data-target="#demo3">dropdown</button>
+                <div id="demo3" class="collapse" data-parent="#accordian">lorem ipsum lorem ipsum lorem
+                    ipsumlorem ipsum
+                    lorem ipsum lorem ipsum
+                    lorem
+                    ipsum lorem ipsumlorem ipsum lorem ipsum ipsum lorem ipsumlorem ipsum lorem ipsum
+                    ipsum lorem ipsumlorem ipsum lorem ipsum ipsum lorem ipsumlorem ipsum</div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">apple</button>
+            <button type="button" class="btn btn-primary">samsung</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">sony</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">link1</a>
+                    <a class="dropdown-item" href="#">link2</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">primary</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown"></button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">link1</a>
+                    <a class="dropdown-item" href="#">link2</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="modal" id="myModal">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title"> Profile</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum v Lorem
+                            Ipsum Lorem
+                            Ipsum Lorem Ipsum Lorem Ipsum
+                            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card m-4 w-25 bg-success text-white">
+            <img class="rounded-circle"
+                src="https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
+                alt="image" width="100%">
+            <div class="card-body">
+                <h1 class="card-title m-5"> raju</h1>
+                <p class="card-text">lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et,
+                    dignissimos
+                    sunt vel asperiores, facere unde minima animi veniam, modi iusto eaque autem debitis error
+                    minus ab
+                    repellat</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See Profile</a>
+            </div>
+        </div>
+        <!---buttn to open the modal-->
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#mymodal">open
+            this</button>
+        <!---the modal-->
+        <div class="modal fade" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">headings</h2>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2>responsive table</h2>
+            <div class="table-responsive-sm">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>first</th>
+                            <th>last</th>
+                            <th>age</th>
+                            <th>sex</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                            <th>example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>raju</td>
+                            <td>va</td>
+                            <td>25</td>
+                            <td>male</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+            <img src="" alt="">
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://m.media-amazon.com/images/I/51AyoebP3BL._SX3000_.jpg"
+                        alt="first slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://m.media-amazon.com/images/I/71GTpbKWLVL._SX3000_.jpg"
+                        alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://m.media-amazon.com/images/I/61rADz+kcYL._SX3000_.jpg"
+                        alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>footer</h1>
+                <p>resize the page</p>
+            </div>
+        </div>
+
+</body>
+
+</html>

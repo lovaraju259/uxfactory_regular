@@ -1,4 +1,4 @@
-//1.check if all the property values in an array of object is same or not
+//1.check if all the property values in an array of object is same or not  
 var empdetails = [
     { name: 'lovaraju', id: 1, age: 27, designation: 'electrical engineer', salary: 20000 },
     { name: 'sri', id: 2, age: 25, designation: 'chemical engineer', salary: 40000 },
@@ -36,3 +36,11 @@ let empfilter = empdetails.filter(emp => {
     return emp.id > 2;
 });
 console.log(empfilter);
+
+
+var numbers=[9,8,90,89,100];
+var reduceval=numbers.reduce((total,num)=>{
+    console.log(num);
+    console.log(total);
+});
+console.log(reduceval);
